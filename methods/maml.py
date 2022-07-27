@@ -16,7 +16,7 @@ class MAML(MetaTemplate):
         self.classifier = backbone.Linear_fw(self.feat_dim, n_way)
         self.classifier.bias.data.fill_(0)
         
-        self.n_task     = 4
+        self.n_task     = 1
         self.task_update_num = 5
         self.train_lr = 0.01
         self.approx = approx #first order approx.        
@@ -81,7 +81,7 @@ class MAML(MetaTemplate):
             assert self.n_way  ==  x.size(0), "MAML do not support way change"
 
             loss = self.set_forward_loss(x)
-            avg_loss = avg_loss+loss.data[0]
+            avg_loss = avg_loss+loss.data
             loss_all.append(loss)
 
             task_count += 1
