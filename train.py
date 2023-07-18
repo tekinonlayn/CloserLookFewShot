@@ -82,7 +82,7 @@ if __name__=='__main__':
             if params.dataset in ['omniglot', 'cross_char']:
                 params.stop_epoch = 5
             elif params.dataset in ['CUB']:
-                params.stop_epoch = 200... This is different as stated in the open-review paper. However, using 400 epoch in baseline actually lead to over-fitting
+                params.stop_epoch = 200 #... This is different as stated in the open-review paper. However, using 400 epoch in baseline actually lead to over-fitting
             elif params.dataset in ['miniImagenet', 'cross']:
                 params.stop_epoch = 400
             else:
